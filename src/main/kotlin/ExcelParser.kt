@@ -3,8 +3,7 @@ import org.apache.poi.hssf.util.*
 import org.apache.poi.ss.usermodel.*
 import java.io.*
 import org.apache.poi.ss.usermodel.*
-
-
+import org.apache.poi.hssf.usermodel.*
 
 open class ExcelParser {
 
@@ -58,6 +57,11 @@ open class ExcelParser {
                 when (cellType) {
                     Cell.CELL_TYPE_STRING ->{
                         result += cell.stringCellValue + "="
+
+                        val fontHeader = workBook.createFont()
+                        fontHeader.boldweight = HSSFFont.BOLDWEIGHT_BOLD
+                        fontHeader.fontName = "Arial"
+                        colorStyleGreen?.setFont(fontHeader)
                         cell.cellStyle = colorStyleGreen
                     }
 
