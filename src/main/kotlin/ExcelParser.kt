@@ -56,7 +56,6 @@ open class ExcelParser {
 
                 //перебираем возможные типы ячеек
                 when (cellType) {
-
                     Cell.CELL_TYPE_STRING ->{
                         result += cell.stringCellValue + "="
                         cell.cellStyle = colorStyleGreen
