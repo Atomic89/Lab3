@@ -25,20 +25,20 @@ open class ExcelParser {
         colorStyleRed?.fillPattern = HSSFCellStyle.SOLID_FOREGROUND
         colorStyleRed?.fillForegroundColor = HSSFColor.RED.index
 
-        val colorStyleBlue = workBook?.createCellStyle()
+        val colorStyleBlue = workBook!!.createCellStyle()
         colorStyleBlue?.fillPattern = HSSFCellStyle.SOLID_FOREGROUND
         colorStyleBlue?.fillForegroundColor = HSSFColor.BLUE.index
 
-        val colorStyleYellow = workBook?.createCellStyle()
+        val colorStyleYellow = workBook.createCellStyle()
         colorStyleYellow?.fillPattern = HSSFCellStyle.SOLID_FOREGROUND
         colorStyleYellow?.fillForegroundColor = HSSFColor.YELLOW.index
 
-        val colorStyleGreen = workBook?.createCellStyle()
+        val colorStyleGreen = workBook.createCellStyle()
         colorStyleGreen?.fillPattern = HSSFCellStyle.SOLID_FOREGROUND
         colorStyleGreen?.fillForegroundColor = HSSFColor.GREEN.index
 
         //разбираем первый лист входного файла на объектную модель
-        val createHelper = workBook!!.creationHelper
+        val createHelper = workBook.creationHelper
         val sheet = workBook.getSheetAt(0)
         val it = sheet.iterator()
 //        val cellReference = CellReference(cellChange)
