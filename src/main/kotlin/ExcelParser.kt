@@ -90,6 +90,7 @@ open class ExcelParser {
         }catch (e:IOException){
             e.printStackTrace()
         }
+        workBook?.close
         return result
     }
 
